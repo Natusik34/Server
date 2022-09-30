@@ -17,9 +17,12 @@ public class MainServer {
                 try {
                     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));//принятие сообщений
                     out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));//отправление сообщений
-                    int res = Calculator.calculator(in.readLine());
+                    //int res = Calculator.calculator(in.readLine());
+                    String res = "Bay";
                     out.write(res + "\n");
                     out.flush();
+                    res = in.readLine();
+                    System.out.println(res);
                 } finally { // закрываем потоки
                     socket.close();
                     in.close();
